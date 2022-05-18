@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/buildings"
+        android:title="Buildings"
+        android:icon="@drawable/ic_building_foreground"/>
+    <item
+        android:id="@+id/places"
+        android:title="Places"
+        android:icon="@drawable/ic_map_foreground"/>
+    <item
+        android:id="@+id/architects"
+        android:title="Architects"
+        android:icon="@drawable/ic_people_foreground"/>
+</menu>
