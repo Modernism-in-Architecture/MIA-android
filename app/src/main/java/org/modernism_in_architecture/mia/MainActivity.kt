@@ -11,12 +11,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Fragments
         val buildingFragment = BuildingFragment()
         val placesFragment = PlacesFragment()
         val architectsFragment = ArchitectsFragment()
 
         setCurrentFragment(buildingFragment)
 
+        // Menu
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         bottomNavigation.setOnItemSelectedListener  {
             when(it.itemId){
@@ -26,6 +28,7 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+
     }
 
     private fun setCurrentFragment(fragment: Fragment) {
@@ -34,6 +37,4 @@ class MainActivity : AppCompatActivity() {
             commit()
         }
     }
-
-
 }
