@@ -6,6 +6,7 @@ import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import org.modernism_in_architecture.mia.adapters.BuildingGridAdapter
 import org.modernism_in_architecture.mia.models.MiaApiStatus
 
 import org.modernism_in_architecture.mia.network.Building

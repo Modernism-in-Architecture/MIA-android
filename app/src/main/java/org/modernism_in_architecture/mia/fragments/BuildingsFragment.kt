@@ -6,6 +6,7 @@ import androidx.fragment.app.viewModels
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import org.modernism_in_architecture.mia.adapters.BuildingGridAdapter
 import org.modernism_in_architecture.mia.databinding.FragmentBuildingsBinding
 import org.modernism_in_architecture.mia.models.BuildingViewModel
 

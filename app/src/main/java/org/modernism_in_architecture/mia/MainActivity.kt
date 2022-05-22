@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import org.modernism_in_architecture.mia.fragments.ArchitectsFragment
+import org.modernism_in_architecture.mia.fragments.PlacesFragment
 
 
 class MainActivity : AppCompatActivity() {
