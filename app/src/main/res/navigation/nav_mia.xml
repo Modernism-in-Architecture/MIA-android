@@ -9,11 +9,16 @@
 
     <fragment
         android:id="@+id/buildings_list"
+        android:label="Buildings"
         android:name="org.modernism_in_architecture.mia.views.buildingsList.BuildingsListFragment"
         tools:layout="@layout/fragment_buildings_list">
         <action
             android:id="@+id/action_buildings_list_to_building_details"
-            app:destination="@id/building_details">
+            app:destination="@id/building_details"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" >
             <argument
                 android:name="buildingId"
                 app:argType="integer" />
@@ -30,55 +35,3 @@
     </fragment>
 
 </navigation>
-
-
-
-
-<!--<navigation xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--    xmlns:tools="http://schemas.android.com/tools"-->
-<!--    app:startDestination="@id/view_pager_fragment">-->
-
-<!--    <fragment-->
-<!--        android:id="@+id/view_pager_fragment"-->
-<!--        android:name="org.modernism_in_architecture.mia.HomeViewPagerFragment"-->
-<!--        tools:layout="@layout/fragment_view_pager">-->
-
-<!--        <action-->
-<!--            android:id="@+id/action_view_pager_fragment_to_plant_detail_fragment"-->
-<!--            app:destination="@id/building_detail_fragment"-->
-<!--            app:enterAnim="@anim/slide_in_right"-->
-<!--            app:exitAnim="@anim/slide_out_left"-->
-<!--            app:popEnterAnim="@anim/slide_in_left"-->
-<!--            app:popExitAnim="@anim/slide_out_right" />-->
-<!--    </fragment>-->
-
-<!--    <fragment-->
-<!--        android:id="@+id/plant_detail_fragment"-->
-<!--        android:name="com.google.samples.apps.sunflower.PlantDetailFragment"-->
-<!--        android:label="@string/plant_details_title"-->
-<!--        tools:layout="@layout/fragment_plant_detail">-->
-
-<!--        <action-->
-<!--            android:id="@+id/action_plant_detail_fragment_to_gallery_fragment"-->
-<!--            app:destination="@id/gallery_fragment"-->
-<!--            app:enterAnim="@anim/slide_in_right"-->
-<!--            app:exitAnim="@anim/slide_out_left"-->
-<!--            app:popEnterAnim="@anim/slide_in_left"-->
-<!--            app:popExitAnim="@anim/slide_out_right" />-->
-<!--        <argument-->
-<!--            android:name="plantId"-->
-<!--            app:argType="string" />-->
-<!--    </fragment>-->
-
-<!--    <fragment-->
-<!--        android:id="@+id/gallery_fragment"-->
-<!--        android:name="com.google.samples.apps.sunflower.GalleryFragment"-->
-<!--        android:label="@string/plant_details_title"-->
-<!--        tools:layout="@layout/fragment_gallery">-->
-<!--        <argument-->
-<!--            android:name="plantName"-->
-<!--            app:argType="string" />-->
-<!--    </fragment>-->
-
-<!--</navigation>-->

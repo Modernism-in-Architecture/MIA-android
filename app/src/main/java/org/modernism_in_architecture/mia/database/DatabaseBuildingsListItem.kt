@@ -11,6 +11,7 @@ data class DatabaseBuildingsListItem(
     val id: Int,
     val name: String?,
     val city: String?,
+    val country: String?,
     val feedImage: String?,
 )
 
@@ -20,6 +21,7 @@ fun List<DatabaseBuildingsListItem>.asDomainModel(): List<BuildingsListItem> {
             id = it.id,
             name = it.name,
             city = it.city,
+            country = it.country,
             feedImage = it.feedImage,
         )
     }

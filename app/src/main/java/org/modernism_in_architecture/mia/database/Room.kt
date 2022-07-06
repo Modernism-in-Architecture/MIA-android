@@ -7,7 +7,7 @@ import androidx.room.*
 interface BuildingsDao {
 
     // building list
-    @Query("select * from DatabaseBuildingsListItem")
+    @Query("select * from DatabaseBuildingsListItem ORDER BY id DESC")
     fun getDatabaseBuildings(): LiveData<List<DatabaseBuildingsListItem>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

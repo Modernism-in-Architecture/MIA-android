@@ -1,9 +1,7 @@
 package org.modernism_in_architecture.mia.views.buildingsList
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -56,12 +54,12 @@ class BuildingsListFragment : Fragment() {
         _binding = null
     }
 
-}
 
-//    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-//        inflater.inflate(R.menu.menu_plant_list, menu)
-//    }
-//
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.bottom_nav_menu, menu)
+    }
+
 //    override fun onOptionsItemSelected(item: MenuItem): Boolean {
 //        return when (item.itemId) {
 //            R.id.filter_zone -> {
@@ -88,3 +86,4 @@ class BuildingsListFragment : Fragment() {
 //        }
 //    }
 //}
+}

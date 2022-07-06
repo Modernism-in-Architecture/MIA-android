@@ -29,6 +29,7 @@ fun List<NetworkBuildingsListItem>.asDatabaseModel(): List<DatabaseBuildingsList
                 id = it1,
                 name = it.name,
                 city = it.city,
+                country = it.country,
                 feedImage = it.feedImage,
             )
         }!!
