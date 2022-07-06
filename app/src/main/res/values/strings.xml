@@ -2,4 +2,8 @@
     <string name="app_name">MIA</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="buildings_list_title">Buildings</string>
+    <string name="places_title">Places</string>
+    <string name="architects_list_title">Architects</string>
+    <string name="feed_image_of_the_building">Feed image of the building</string>
 </resources>
