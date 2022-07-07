@@ -6,4 +6,7 @@
     <string name="places_title">Places</string>
     <string name="architects_list_title">Architects</string>
     <string name="feed_image_of_the_building">Feed image of the building</string>
+    <string name="app_label">MIA</string>
+    <string name="search_hint">...</string>
+    <string name="search_title">Search</string>
 </resources>
