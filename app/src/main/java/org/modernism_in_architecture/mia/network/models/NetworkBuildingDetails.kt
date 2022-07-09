@@ -15,26 +15,44 @@ data class NetworkBuildingDetails (
     @SerializedName("country"            ) var country            : String?               = null,
     @SerializedName("latitude"           ) var latitude           : Double?               = null,
     @SerializedName("longitude"          ) var longitude          : Double?               = null,
-    @SerializedName("galleryImages"      ) var galleryImages      : ArrayList<String>     = arrayListOf(),
+    @SerializedName("galleryImages"      ) var galleryImages      : List<String>     = arrayListOf(),
     @SerializedName("subtitle"           ) var subtitle           : String?               = null,
     @SerializedName("todaysUse"          ) var todaysUse          : String?               = null,
     @SerializedName("buildingType"       ) var buildingType       : String?               = null,
     @SerializedName("history"            ) var history            : String?               = null,
     @SerializedName("description"        ) var description        : String?               = null,
-    @SerializedName("directions"         ) var directions         : String?               = null,
-//    @SerializedName("sourceUrls"         ) var sourceUrls         : ArrayList<SourceUrls> = arrayListOf(),
-    @SerializedName("sourceBooks"        ) var sourceBooks        : ArrayList<String>     = arrayListOf(),
-//    @SerializedName("architects"         ) var architects         : ArrayList<Architects> = arrayListOf(),
-//    @SerializedName("developers"         ) var developers         : ArrayList<Developers> = arrayListOf(),
+    @SerializedName("architects"         ) var architects         : ArrayList<Architect> = arrayListOf(),
     @SerializedName("absoluteURL"        ) var absoluteURL        : String?               = null
 
-)
+) {
+    data class Architect(
+        @SerializedName("id")
+        var id: Int,
+        @SerializedName("lastName")
+        var lastName: String,
+        @SerializedName("firstName")
+        var firstName: String,
+    )
+}
 
 fun NetworkBuildingDetails.asDatabaseModel(): DatabaseBuildingDetails {
     return DatabaseBuildingDetails(
         id = id,
         name = name ?: "",
-        city = city ?: "",
         feedImage = galleryImages[0],
+        todaysUse = todaysUse ?: "",
+        buildingType = buildingType ?: "",
+        address = address ?: "",
+        zipCode = zipCode ?: "",
+        city = city ?: "",
+        country = country ?: "",
+        latitude = latitude ?: 0.0,
+        longitude = longitude ?: 0.0,
+        history = history ?: "",
+        description = description ?: "",
+        yearOfConstruction = yearOfConstruction ?: "",
+        absoluteURL = absoluteURL ?: "",
+        galleryImages = galleryImages,
+        architects = architects,
     )
 }

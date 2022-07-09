@@ -2,10 +2,13 @@ package org.modernism_in_architecture.mia.views.buildingsList
 
 import android.os.Bundle
 import android.view.*
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 import org.modernism_in_architecture.mia.R
 import org.modernism_in_architecture.mia.databinding.FragmentBuildingsListBinding
@@ -26,6 +29,9 @@ class BuildingsListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
+        val tvTopBarTitle = (requireActivity() as AppCompatActivity).findViewById<TextView>(R.id.viewTitle)
+        tvTopBarTitle.setText("Buildings")
 
         _binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_buildings_list, container, false

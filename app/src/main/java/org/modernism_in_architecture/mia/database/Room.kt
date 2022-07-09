@@ -22,6 +22,7 @@ interface BuildingsDao {
 }
 
 @Database(entities = [DatabaseBuildingsListItem::class, DatabaseBuildingDetails::class], version = 1)
+@TypeConverters(ArchitectConverter::class, StringListConverter::class)
 abstract class BuildingsDatabase : RoomDatabase() {
     abstract val buildingsDao: BuildingsDao
 }

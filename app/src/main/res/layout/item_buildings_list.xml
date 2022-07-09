@@ -18,7 +18,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:padding="5dp"
         android:onClick="@{() -> clickListener.onClick(data)}"
         >
 
@@ -28,11 +27,13 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            card_view:cardBackgroundColor="@color/building_icon_background"
+            card_view:cardBackgroundColor="@color/white"
             android:layout_gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="320dp"
+            android:layout_height="wrap_content"
             card_view:cardCornerRadius="10dp"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardElevation="5dp"
             >
 
             <LinearLayout
@@ -54,21 +55,23 @@
                 <TextView
                     android:id="@+id/buildingListTitle"
                     android:text="@{data.name}"
-                    android:textColor="@color/white"
-                    android:layout_width="fill_parent"
+                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
                     android:paddingTop="10dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
                     tools:text="Hello"
                     />
 
                 <TextView
                     android:id="@+id/buildingListLocation"
-                    android:text="@{data.city+' '+ data.country}"
-                    android:textColor="@color/white"
-                    android:layout_width="fill_parent"
+                    android:text="@{@string/cityCountry(data.city, data.country)}"
+                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:paddingLeft="10dp"

@@ -34,4 +34,22 @@
             app:argType="integer" />
     </fragment>
 
+    <fragment
+        android:id="@+id/places"
+        android:label="Places"
+        android:name="org.modernism_in_architecture.mia.views.buildingsList.BuildingsListFragment"
+        tools:layout="@layout/fragment_buildings_list">
+        <action
+            android:id="@+id/action_buildings_list_to_building_details"
+            app:destination="@id/building_details"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" >
+            <argument
+                android:name="buildingId"
+                app:argType="integer" />
+        </action>
+    </fragment>
+
 </navigation>
