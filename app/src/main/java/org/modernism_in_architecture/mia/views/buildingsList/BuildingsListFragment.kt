@@ -8,7 +8,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 import org.modernism_in_architecture.mia.R
 import org.modernism_in_architecture.mia.databinding.FragmentBuildingsListBinding
@@ -38,7 +37,7 @@ class BuildingsListFragment : Fragment() {
         )
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
-        binding.recyclerView.adapter = adapter
+        binding.buildingsRecyclerView.adapter = adapter
 
         return binding.root
     }
@@ -56,11 +55,9 @@ class BuildingsListFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        binding.recyclerView.adapter = null
+        binding.buildingsRecyclerView.adapter = null
         _binding = null
     }
-
-
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.bottom_nav_menu, menu)

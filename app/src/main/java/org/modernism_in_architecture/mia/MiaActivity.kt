@@ -6,16 +6,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigation.NavigationBarView.LABEL_VISIBILITY_AUTO
 
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -27,26 +24,14 @@ class MiaActivity : AppCompatActivity(R.layout.activity_mia) {
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         val navController = navHostFragment.navController
 
-        // Toolbar
         setSupportActionBar(toolbar)
-        // setupBottomNavMenu(navController)
-        //
-        // supportActionBar?.setDisplayShowHomeEnabled(true)
-        // supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        setupBottomNavMenu(navController)
 
         // handleIntent(intent)
 
     }
-
-//    private fun setupBottomNavMenu(navController: NavController) {
-//        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
-//        bottomNav?.let {
-//            NavigationUI.setupWithNavController(it, navController)
-//        }
-//    }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.options_menu, menu)
@@ -59,7 +44,18 @@ class MiaActivity : AppCompatActivity(R.layout.activity_mia) {
         return true
     }
 
+    private fun setupBottomNavMenu(navController: NavController) {
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        bottomNav?.let {
+            NavigationUI.setupWithNavController(it, navController)
+        }
+    }
 
+//    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+//        val navController = Navigation.findNavController(this, R.id.nav_host)
+//        val navigated = NavigationUI.onNavDestinationSelected(item!!, navController)
+//        return navigated || super.onOptionsItemSelected(item)
+//    }
 
     private fun handleIntent(intent: Intent) {
 

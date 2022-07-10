@@ -1,6 +1,5 @@
 package org.modernism_in_architecture.mia.database
 
-import android.util.Log
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import org.modernism_in_architecture.mia.domain.BuildingsListItem

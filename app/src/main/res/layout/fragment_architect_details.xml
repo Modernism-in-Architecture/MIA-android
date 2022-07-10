@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="org.modernism_in_architecture.mia.views.architectDetails.ArchitectDetailsViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_year_of_construction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Year of Construction"
+                android:text="@{viewModel.architectDetails.lastName}"
+                android:layout_marginBottom="8dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Name"
+                android:text="@{viewModel.architectDetails.firstName}"
+                android:layout_marginBottom="8dp"
+                />
+
+
+    </LinearLayout>
+</layout>
+

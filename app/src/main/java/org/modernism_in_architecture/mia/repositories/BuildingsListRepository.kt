@@ -23,7 +23,7 @@ class BuildingsListRepository @Inject constructor(
     suspend fun refreshBuildingsList() {
         try {
             val data = networkService.getBuildingsList()
-            database.buildingsDao.insertAll(data.networkBuildings.asDatabaseModel())
+            database.buildingsDao.insertAllBuildings(data.networkBuildings.asDatabaseModel())
         } catch (e: Exception) {
             Timber.w(e)
         }

@@ -8,9 +8,7 @@ import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.modernism_in_architecture.mia.BuildConfig
-import org.modernism_in_architecture.mia.network.ApiSettings
-import org.modernism_in_architecture.mia.network.BuildingDetailsService
-import org.modernism_in_architecture.mia.network.BuildingsListService
+import org.modernism_in_architecture.mia.network.*
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
@@ -45,12 +43,21 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideApiService(retrofit: Retrofit): BuildingsListService =
+    fun provideBuildingListService(retrofit: Retrofit): BuildingsListService =
         retrofit.create(BuildingsListService::class.java)
 
     @Provides
     @Singleton
-    fun provideUserDetailsService(retrofit: Retrofit): BuildingDetailsService =
+    fun provideBuildingDetailsService(retrofit: Retrofit): BuildingDetailsService =
         retrofit.create(BuildingDetailsService::class.java)
 
+    @Provides
+    @Singleton
+    fun provideArchitectsListService(retrofit: Retrofit): ArchitectsListService =
+        retrofit.create(ArchitectsListService::class.java)
+
+    @Provides
+    @Singleton
+    fun provideArchitectDetailsService(retrofit: Retrofit): ArchitectDetailsService =
+        retrofit.create(ArchitectDetailsService::class.java)
 }

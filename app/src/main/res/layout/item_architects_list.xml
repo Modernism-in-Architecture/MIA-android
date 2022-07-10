@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="org.modernism_in_architecture.mia.domain.ArchitectsListItem" />
+
+        <variable
+            name="architectsClickListener"
+            type="org.modernism_in_architecture.mia.views.architectsList.ArchitectsClickListener" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:onClick="@{() -> architectsClickListener.onClick(data)}"
+        >
+            <TextView
+                    android:id="@+id/architectsName"
+                    android:text="@{data.lastName}"
+                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    tools:text="Hello"
+                    />
+    </LinearLayout>
+
+</layout>

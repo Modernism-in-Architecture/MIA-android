@@ -9,7 +9,7 @@ import org.modernism_in_architecture.mia.network.models.NetworkBuildingDetails
 data class BuildingDetails(
     val id: Int,
     val name: String? = null,
-    var feedImage: String? = null,
+    val feedImage: String? = null,
     val todaysUse: String? = null,
     val buildingType: String? = null,
     val address: String? = null,

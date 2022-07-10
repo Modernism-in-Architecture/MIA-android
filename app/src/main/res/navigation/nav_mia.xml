@@ -35,21 +35,31 @@
     </fragment>
 
     <fragment
-        android:id="@+id/places"
-        android:label="Places"
-        android:name="org.modernism_in_architecture.mia.views.buildingsList.BuildingsListFragment"
-        tools:layout="@layout/fragment_buildings_list">
+        android:id="@+id/architects_list"
+        android:name="org.modernism_in_architecture.mia.views.architectsList.ArchitectsListFragment"
+        android:label="Architects"
+        tools:layout="@layout/fragment_architects_list">
         <action
-            android:id="@+id/action_buildings_list_to_building_details"
-            app:destination="@id/building_details"
+            android:id="@+id/action_archicts_list_to_architect_details"
+            app:destination="@id/architect_details"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" >
-            <argument
-                android:name="buildingId"
-                app:argType="integer" />
-        </action>
+            app:popExitAnim="@anim/slide_out_right" />
+
     </fragment>
+    <fragment
+        android:id="@+id/architect_details"
+        android:name="org.modernism_in_architecture.mia.views.architectDetails.ArchitectDetailsFragment"
+        tools:layout="@layout/fragment_architect_details">
+        <argument
+            android:name="architectId"
+            app:argType="integer" />
+    </fragment>
+
+<!--    <fragment-->
+<!--        android:id="@+id/places"-->
+<!--        android:name="org.modernism_in_architecture.mia.views.places.PlacesFragment"-->
+<!--        android:label="Places" />-->
 
 </navigation>
