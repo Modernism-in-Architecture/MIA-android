@@ -30,7 +30,7 @@ class BuildingDetailsFragment : Fragment() {
     ): View {
 
         val tvTopBarTitle = (requireActivity() as AppCompatActivity).findViewById<TextView>(R.id.viewTitle)
-        tvTopBarTitle.setText("Details")
+        tvTopBarTitle.text = "Details"
 
         _binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_building_details, container, false

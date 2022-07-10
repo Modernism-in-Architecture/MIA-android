@@ -31,7 +31,7 @@ class ArchitectsListFragment  : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val tvTopBarTitle = (requireActivity() as AppCompatActivity).findViewById<TextView>(R.id.viewTitle)
-        tvTopBarTitle.setText("Architects")
+        tvTopBarTitle.text = "Architects"
 
         _binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_architects_list, container, false
@@ -50,7 +50,7 @@ class ArchitectsListFragment  : Fragment() {
         }
         adapter.clickListener.onItemClick = {
             findNavController().navigate(
-                ArchitectsListFragmentDirections.actionArchictsListToArchitectDetails(it.id))
+                ArchitectsListFragmentDirections.actionArchitectsListToArchitectDetails(it.id))
         }
     }
 

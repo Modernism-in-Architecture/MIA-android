@@ -8,10 +8,8 @@ import kotlinx.coroutines.launch
 import org.modernism_in_architecture.mia.repositories.PlacesRepository
 import javax.inject.Inject
 
-//@HiltViewModel
-//class PlacesViewModel @Inject constructor(
-//    private val placesRepository: PlacesRepository
-//) : ViewModel() {
-//
-//
-//}
+@HiltViewModel
+class PlacesViewModel @Inject constructor() : ViewModel() {
+
+
+}

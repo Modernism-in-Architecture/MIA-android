@@ -40,7 +40,7 @@
         android:label="Architects"
         tools:layout="@layout/fragment_architects_list">
         <action
-            android:id="@+id/action_archicts_list_to_architect_details"
+            android:id="@+id/action_architects_list_to_architect_details"
             app:destination="@id/architect_details"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
@@ -57,9 +57,9 @@
             app:argType="integer" />
     </fragment>
 
-<!--    <fragment-->
-<!--        android:id="@+id/places"-->
-<!--        android:name="org.modernism_in_architecture.mia.views.places.PlacesFragment"-->
-<!--        android:label="Places" />-->
+    <fragment
+        android:id="@+id/places"
+        android:name="org.modernism_in_architecture.mia.views.places.PlacesFragment"
+        android:label="Places" />
 
 </navigation>

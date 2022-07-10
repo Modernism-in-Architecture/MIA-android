@@ -19,9 +19,6 @@ class ArchitectConverter {
     }
     @TypeConverter
     fun fromArchitectsList(value: ArrayList<Architect>): String {
-        if(value == null) {
-            return ""
-        }
         val gson = Gson()
         val type = object : TypeToken<ArrayList<Architect>>() {}.type
         return gson.toJson(value, type)
@@ -41,9 +38,6 @@ class RelatedBuildingConverter {
     }
     @TypeConverter
     fun fromRelatedBuildingList(value: ArrayList<ArchitectBuilding>): String {
-        if(value == null) {
-            return ""
-        }
         val gson = Gson()
         val type = object : TypeToken<ArrayList<ArchitectBuilding>>() {}.type
         return gson.toJson(value, type)

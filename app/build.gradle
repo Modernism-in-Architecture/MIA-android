@@ -5,17 +5,15 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
 apply plugin: 'androidx.navigation.safeargs.kotlin'
 apply plugin: 'kotlin-parcelize'
-
-
-def credentialPropertiesFile = rootProject.file("credentials")
-def credentialProperties = new Properties()
-credentialProperties.load(new FileInputStream(credentialPropertiesFile))
+apply plugin: 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
+
     buildFeatures {
         dataBinding true
     }
+
     defaultConfig {
         applicationId "org.modernism_in_architecture.mia"
         minSdkVersion rootProject.minSdkVersion
@@ -25,10 +23,10 @@ android {
         versionName "0.1.6"
         vectorDrawables.useSupportLibrary true
 
-        buildConfigField("String", "API_KEY", credentialProperties['API_KEY'])
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments["dagger.hilt.disableModulesHaveInstallInCheck"] = "true"
+                arguments += ["room.schemaLocation": "$projectDir/schemas".toString()]
             }
         }
     }
@@ -44,12 +42,14 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
         // Enable Coroutines and Flow APIs
         freeCompilerArgs += "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
         freeCompilerArgs += "-Xopt-in=kotlinx.coroutines.FlowPreview"
     }
+
     packagingOptions {
         // Multiple dependency bring these files in. Exclude them to enable
         // our test APK to build (has no effect on our AARs)
@@ -76,6 +76,8 @@ dependencies {
     implementation "androidx.viewpager2:viewpager2:$rootProject.viewPagerVersion"
     implementation "androidx.work:work-runtime-ktx:$rootProject.workVersion"
     implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+    implementation "com.google.android.gms:play-services-location:$rootProject.locationVersion"
+    implementation "com.google.android.gms:play-services-maps:$rootProject.mapsVersion"
     implementation "com.google.android.material:material:$rootProject.materialVersion"
     implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
     implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttpLoggingVersion"
@@ -86,6 +88,7 @@ dependencies {
     implementation "com.google.dagger:hilt-android:$rootProject.hiltVersion"
     implementation "androidx.profileinstaller:profileinstaller:$rootProject.profileInstallerVersion"
     implementation "androidx.tracing:tracing-ktx:$rootProject.tracingVersion"
+
     // Timber
     implementation "com.jakewharton.timber:timber:$rootProject.timberVersion"
 

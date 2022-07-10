@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -32,6 +34,8 @@ class ArchitectDetailsFragment: Fragment() {
         val tvTopBarTitle =
             (requireActivity() as AppCompatActivity).findViewById<TextView>(R.id.viewTitle)
         tvTopBarTitle.setText("Architect Details")
+
+        // setDisplayShowHomeEnabled(true)
 
         _binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_architect_details, container, false

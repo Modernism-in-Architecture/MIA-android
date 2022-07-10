@@ -15,11 +15,10 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class BuildingsListFragment : Fragment() {
-    private val viewModel: BuildingsListViewModel by viewModels()
 
     @Inject
     lateinit var adapter: BuildingsListAdapter
-
+    private val viewModel: BuildingsListViewModel by viewModels()
     private var _binding: FragmentBuildingsListBinding? = null
     private val binding get() = _binding!!
 
@@ -30,7 +29,7 @@ class BuildingsListFragment : Fragment() {
     ): View {
 
         val tvTopBarTitle = (requireActivity() as AppCompatActivity).findViewById<TextView>(R.id.viewTitle)
-        tvTopBarTitle.setText("Buildings")
+        tvTopBarTitle.text = "Buildings"
 
         _binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_buildings_list, container, false
